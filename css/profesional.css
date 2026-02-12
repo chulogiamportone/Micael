@@ -1,57 +1,81 @@
 body {
-  min-height: auto !important;
+    min-height: auto !important;
 
 }
 
 .main-wrapper {
-  margin-bottom: auto !important;
-  min-height: auto !important;
-    
+    margin-bottom: auto !important;
+    min-height: auto !important;
+
 }
 
 /* =========================================
    1. ESTRUCTURA FIJA (OBLIGATORIO PARA EL SCRIPT DE ESCALA)
    ========================================= */
-
+   .main-wrapper {
+        
+        background-color: white;
+        position: relative;
+        overflow-x: hidden;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    header,
+    footer,
+    .Footer{
+        width: 100% !important;
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+    }
+    section,
+    .TTulo {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+        justify-self: center;
+    }
+    .nota-item{
+        justify-self: center;
+    }
 /* Definimos el lienzo base de 430px */
-.main-wrapper {
-    width: 430px !important;
-    max-width: 430px !important;
-    margin: 0 auto;
-    background-color: white;
-    position: relative;
-    overflow-x: hidden;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+@media (max-width: 1024px) {
+    .main-wrapper {
+        width: 430px !important;
+        max-width: 430px !important;
+        margin: 0 auto;
+    }
+    
+    section,
+    .TTulo {
+        width: 100% !important;
+        max-width: 430px !important;
+    }
+    
 
-/* Header, Footer y Secciones se ajustan a esos 430px */
-header, 
-footer, 
-section, 
-.Footer, 
-.TTulo {
-    width: 100% !important;
-    max-width: 430px !important;
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    box-sizing: border-box !important;
-    transform: none !important;
+    /* Header, Footer y Secciones se ajustan a esos 430px */
+    
 }
 
 /* =========================================
    2. CUERPO DE LA LISTA
    ========================================= */
 
-.notas-body, /* Usas esta clase en el HTML */
+.notas-body,
+/* Usas esta clase en el HTML */
 .card-container {
-    width: 100% !important; /* Llena los 430px */
+    width: 100% !important;
+    /* Llena los 430px */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 15px; /* Margen interno para que no toque bordes */
+    padding: 0 15px;
+    /* Margen interno para que no toque bordes */
     box-sizing: border-box !important;
     margin-top: 20px;
 }
@@ -79,7 +103,8 @@ section,
 .profile-image {
     width: 100px;
     height: 100px;
-    min-width: 100px; /* Evita deformación */
+    min-width: 100px;
+    /* Evita deformación */
     border-radius: 50%;
     object-fit: cover;
 }
@@ -114,6 +139,7 @@ section,
     font-weight: 400;
     line-height: 1.4;
     text-align: left;
+    max-width: 250px;
 }
 
 .button-container {
@@ -140,7 +166,8 @@ section,
    ========================================= */
 
 .prof-detalle {
-    width: 100% !important; /* Ocupa los 430px del wrapper */
+    width: 100% !important;
+    /* Ocupa los 430px del wrapper */
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -163,7 +190,7 @@ section,
     overflow: hidden;
     margin-bottom: 1.5rem;
     flex-shrink: 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .prof-detalle__avatar {
@@ -218,7 +245,7 @@ section,
     width: 100%;
 }
 
-.btn-anterior, 
+.btn-anterior,
 .btn-siguiente {
     background: none;
     border: none;
@@ -248,14 +275,17 @@ footer {
 .card-profesional {
     /* Estructura base */
     width: 100%;
-    max-width: 430px; /* Tamaño máximo similar al original, pero flexible */
+    max-width: 430px;
+    /* Tamaño máximo similar al original, pero flexible */
     background-color: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Para que nada se salga de los bordes */
+    overflow: hidden;
+    /* Para que nada se salga de los bordes */
     font-family: 'Montserrat', sans-serif;
-    margin: 0 auto; /* Para centrar la tarjeta si está sola */
+    margin: 0 auto;
+    /* Para centrar la tarjeta si está sola */
 }
 
 .card-header {
@@ -281,20 +311,23 @@ footer {
 }
 
 .card-header .subtitulo {
-    display: block; /* Fuerza el salto de línea */
+    display: block;
+    /* Fuerza el salto de línea */
     margin-top: 5px;
 }
 
 .card-imagen-container {
     width: 100%;
-    height: 287px; /* Altura fija para mantener proporción del diseño */
+    height: 287px;
+    /* Altura fija para mantener proporción del diseño */
     overflow: hidden;
 }
 
 .card-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* La imagen se recorta bien sin deformarse */
+    object-fit: cover;
+    /* La imagen se recorta bien sin deformarse */
     display: block;
 }
 
@@ -304,7 +337,7 @@ footer {
     /* Nota: En tu código original el texto era blanco (#fff). 
        Si el fondo es blanco, no se lee. Lo cambié a un gris oscuro/violeta. 
        Si querías fondo oscuro abajo, cambia el background-color aquí. */
-    color: #4C2C53; 
+    color: #4C2C53;
 }
 
 .card-body p {

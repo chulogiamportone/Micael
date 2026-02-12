@@ -19,18 +19,19 @@
     <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-    
+
 
     <!-- Hojas de estilo -->
 
     <link rel="stylesheet" href="/css/nav_bar.css">
     <link rel="stylesheet" href="/css/slider.css">
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/index_desktop.css">
 </head>
 
 
 
-<body>
+<body class="es-home">
     <div class="main-wrapper">
         <header style="height: 150px;">
             <div data-include="nav_bar.html"></div>
@@ -66,39 +67,41 @@
 
         <section name="Bienvenida" id="Bienvenida_Section">
             <div class="BienvenidosAMicael">
+                <div class="BienvenidosAMicael_text">BIENVENIDOS A MICAEL</div>
                 <div class="Bienvenida_text">
                     Un espacio pensado para el abordaje integral, promover la prevención,buscar el equilibrio entre
                     cuerpo,
                     mente y espíritu, y alcanzar el estado de salutogénesis.
                 </div>
-                <div class="BienvenidosAMicael_text">BIENVENIDOS A MICAEL</div>
             </div>
         </section>
 
         <section name="Agenda_Index" id="profesionales">
             <div class="Agenda">
-                
-                <a href="https://wa.me/+5492613330193" class="Rectangle11" style="z-index: 10;"></a>
-                <a href="https://wa.me/+5492613330193" class="AgendeSuPrimeraConsulta" style="z-index: 11;">Agende su primera
-                    consulta</a>
+                <div class="Agenda_text2">
+                    Su salud es lo primordial: <br />estamos aquí para ayudarlo.
+                </div>
                 <div class="Agenda_text">
                     Acompañamos a cada paciente en el camino de una mejor calidad de vida. Tratamientos personalizados,
                     con
                     el respaldo de un equipo profesional especializado, en un entorno de confianza y respeto.
                 </div>
-                <div class="Agenda_text2">
-                    Su salud es lo primordial: <br />estamos aquí para ayudarlo.
-                </div>
+                <a href="https://wa.me/+5492613330193" class="Rectangle11" style="z-index: 10;"><a
+                        href="https://wa.me/+5492613330193" class="AgendeSuPrimeraConsulta" style="z-index: 11;">Agende
+                        su primera
+                        consulta</a></a>
+
+
             </div>
         </section>
 
         <section name="Tratamientos_Index" id="tratamientos">
             <div class="Tratamientos">
+                <div class="Tratamientos_title">TRATAMIENTOS</div>
                 <div class="Tratamientos_text">
                     Tras la primera entrevista y evaluación del especialista en medicina integrativa determinaremos el
                     tratamiento más adecuado para su caso.
                 </div>
-                <div class="Tratamientos_title">TRATAMIENTOS</div>
                 <div class="Imagen">
                     <img class="EstetoscopioPixabay1" src="/images/Home/Tratamientos/tratamientosportada.png">
                 </div>
@@ -106,10 +109,84 @@
             <div id="cards-container"></div>
         </section>
 
+        <div class="mobile-only-view">
+            <section name="Contacto_Index" id="Contacto_Index">
+                <div class="contacto-container">
+                    <div class="contacto-content">
+                        <h2 class="contacto-title">CONTACTO</h2>
+                        <p class="whatsapp-info">
+                            Solicitud de turnos (WhatsApp): <strong>+54 261 333-0193</strong>
+                        </p>
+                        <p class="form-description">
+                            Por consultas generales o requerimientos de información, por favor, complete el formulario:
+                        </p>
 
-        <section name="Contacto_Index" id="Contacto_Index">
-            <div class="contacto-container">
-                <div class="contacto-content">
+                        <form id="contactForm" class="contact-form" action="send_mail.php" method="POST">
+                            <div class="form-header">
+                                <h3 class="form-question">¿En qué podemos ayudarle?</h3>
+                                <p class="required-note">* Completar</p>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="email">Correo electrónico<span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message">Campo requerido</span>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="nombre">Nombre / Apellido<span class="required">*</span></label>
+                                <input type="text" id="nombre" name="nombre" required>
+                                <span class="error-message">Campo requerido</span>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="telefono">Número de teléfono<span class="required">*</span></label>
+                                <input type="tel" id="telefono" name="telefono" required>
+                                <span class="error-message">Campo requerido</span>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="comentario">Comentario / Consulta<span class="required">*</span></label>
+                                <textarea id="comentario" name="comentario" required></textarea>
+                                <span class="error-message">Campo requerido</span>
+                            </div>
+
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="enviarCopia" name="enviarCopia">
+                                <label for="enviarCopia">Enviarme una copia</label>
+                            </div>
+
+                            <div style="display: flex; justify-content: center;">
+                                <button type="submit" class="submit-btn">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section name="Domicilio_Index" id="Domicilio_Index">
+                <div class="Domicilio">
+                    <div class="Domicilio_title">DOMICILIO</div>
+                    <div class="EmilioJofre">
+                        <span class="bold">Emilio Jofré 473, </span>
+                        <span>Quinta Sección, Mendoza, Argentina</span>
+                    </div>
+
+
+                    <div class="map-responsive">
+                        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            src="https://www.google.com/maps?q=Emilio+Jofré+473,+M5500+Mendoza,+Argentina&z=15&output=embed"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+        <section id="Contacto_Domicilio_Desktop" class="desktop-only-view">
+            <div class="desktop-wrapper">
+
+                <div class="desktop-header">
                     <h2 class="contacto-title">CONTACTO</h2>
                     <p class="whatsapp-info">
                         Solicitud de turnos (WhatsApp): <strong>+54 261 333-0193</strong>
@@ -117,69 +194,63 @@
                     <p class="form-description">
                         Por consultas generales o requerimientos de información, por favor, complete el formulario:
                     </p>
+                </div>
 
-                    <form id="contactForm" class="contact-form" action="send_mail.php" method="POST">
-                        <div class="form-header">
-                            <h3 class="form-question">¿En qué podemos ayudarle?</h3>
-                            <p class="required-note">* Completar</p>
+                <div class="desktop-body-flex">
+
+                    <div class="desktop-col-left">
+                        <form id="contactFormDesktop" class="contact-form desktop-form-style" action="send_mail.php"
+                            method="POST">
+                            <div class="form-header">
+                                <h3 class="form-question">¿En qué podemos ayudarle?</h3>
+                                <p class="required-note">* Completar</p>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="email_d">Correo electrónico<span class="required">*</span></label>
+                                <input type="email" id="email_d" name="email" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="nombre_d">Nombre / Apellido<span class="required">*</span></label>
+                                <input type="text" id="nombre_d" name="nombre" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="telefono_d">Número de teléfono<span class="required">*</span></label>
+                                <input type="tel" id="telefono_d" name="telefono" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="comentario_d">Comentario / Consulta<span class="required">*</span></label>
+                                <textarea id="comentario_d" name="comentario" required></textarea>
+                            </div>
+
+                            <div style="display: flex; justify-content: center; margin-top: 20px;">
+                                <button type="submit" class="submit-btn">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="desktop-col-right">
+                        <div class="Domicilio_title desktop-dom-title">DOMICILIO</div>
+
+                        <div class="EmilioJofre desktop-address">
+                            <span class="bold">Emilio Jofré 473, </span>
+                            <span>Quinta Sección, Mendoza, Argentina</span>
                         </div>
 
-                        <div class="form-field">
-                            <label for="email">Correo electrónico<span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required>
-                            <span class="error-message">Campo requerido</span>
+                        <div class="map-responsive desktop-map-frame">
+                            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                src="https://www.google.com/maps?q=Emilio+Jofré+473,+M5500+Mendoza,+Argentina&z=15&output=embed"
+                                allowfullscreen>
+                            </iframe>
                         </div>
+                    </div>
 
-                        <div class="form-field">
-                            <label for="nombre">Nombre / Apellido<span class="required">*</span></label>
-                            <input type="text" id="nombre" name="nombre" required>
-                            <span class="error-message">Campo requerido</span>
-                        </div>
-
-                        <div class="form-field">
-                            <label for="telefono">Número de teléfono<span class="required">*</span></label>
-                            <input type="tel" id="telefono" name="telefono" required>
-                            <span class="error-message">Campo requerido</span>
-                        </div>
-
-                        <div class="form-field">
-                            <label for="comentario">Comentario / Consulta<span class="required">*</span></label>
-                            <textarea id="comentario" name="comentario" required></textarea>
-                            <span class="error-message">Campo requerido</span>
-                        </div>
-
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" id="enviarCopia" name="enviarCopia">
-                            <label for="enviarCopia">Enviarme una copia</label>
-                        </div>
-
-                        <div style="display: flex; justify-content: center;">
-                            <button type="submit" class="submit-btn">Enviar</button>
-                        </div>
-                    </form>
                 </div>
             </div>
         </section>
-        
-        <section name="Domicilio_Index" id="Domicilio_Index">
-            <div class="Domicilio">
-                <div class="Domicilio_title">DOMICILIO</div>
-                <div class="EmilioJofre">
-                    <span class="bold">Emilio Jofré 473, </span>
-                    <span>Quinta Sección, Mendoza, Argentina</span>
-                </div>
-
-
-                <div class="map-responsive">
-                    <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.google.com/maps?q=Emilio+Jofré+473,+M5500+Mendoza,+Argentina&z=15&output=embed"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-
-            </div>
-        </section>
-
         <section name="Blog_Index" id="notas">
 
             <!-- blog-latest-section.html -->

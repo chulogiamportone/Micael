@@ -1,0 +1,29 @@
+ajuste escala
+function ajustarEscala() {
+    const anchoVentana = window.innerWidth;
+    
+    // --- LÓGICA DE ESCRITORIO ---
+    // Si la pantalla es mayor a 1024px, desactivamos el zoom y salimos.
+    if (anchoVentana > 1024) {
+        document.body.style.zoom = "1"; 
+        // Agregamos una clase al body para facilitar el CSS de escritorio
+        document.body.classList.add('desktop-view');
+        document.body.classList.remove('mobile-scaled');
+        return; 
+    }
+
+    // --- LÓGICA MÓVIL (Tu código original) ---
+    document.body.classList.add('mobile-scaled');
+    document.body.classList.remove('desktop-view');
+
+    const anchoDiseno = 430;
+    const anchoMaximo = 1080; 
+    const anchoParaCalculo = Math.min(anchoVentana, anchoMaximo);
+    const escala = anchoParaCalculo / anchoDiseno;
+
+    document.body.style.zoom = escala;
+}
+
+// Ejecutamos
+ajustarEscala();
+window.addEventListener('resize', ajustarEscala);

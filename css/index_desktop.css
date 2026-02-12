@@ -1,0 +1,733 @@
+/* =======================================================
+   VISTA DE ESCRITORIO (Mayor a 1024px)
+   ======================================================= */
+
+
+
+@media (min-width: 1025px) {
+
+
+
+    .main-wrapper {
+        max-width: 100%;
+        margin: 0;
+        width: 100%;
+
+
+
+    }
+
+    #tratamientos {
+        /* IMPORTANTE: 'position: relative' crea el límite para que la imagen de fondo no se salga de esta sección */
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        /* La altura se adapta al contenido (títulos + cards) */
+        top: 0 !important;
+        padding: 60px 0 80px 0;
+        /* Aire arriba y abajo */
+
+        /* Flexbox para ordenar verticalmente */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* overflow: hidden; Opcional: si la imagen se sale un poco por algún borde */
+    }
+
+    /* =========================================
+       2. IMAGEN DE FONDO (CUBRE TODO)
+       ========================================= */
+    /* El wrapper de la imagen */
+    .Imagen {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        /* Ocupa toda la altura de la sección #tratamientos */
+        z-index: -1;
+        /* MAGIA: Se coloca DETRÁS de todo el contenido de esta sección */
+        pointer-events: none;
+        /* Buena práctica: evita que la imagen de fondo bloquee clicks en las cards */
+    }
+
+    /* La imagen real */
+    .EstetoscopioPixabay1 {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        /* Estira la imagen para cubrir el área sin deformarla */
+        object-position: center center;
+        /* Centra la imagen */
+        opacity: 0.12;
+        /* Muy sutil para que se lea bien el texto encima. Ajusta este valor si quieres */
+    }
+
+    /* =========================================
+       3. CABECERA (TÍTULO Y TEXTO)
+       ========================================= */
+    .Tratamientos {
+        position: relative !important;
+        width: 90% !important;
+        max-width: 800px;
+        height: auto !important;
+        margin-bottom: 50px;
+        text-align: center;
+        order: 1;
+        /* Aparece primero */
+        z-index: 2;
+        /* Se asegura de estar sobre el fondo (aunque el fondo sea -1, esto es más seguro) */
+    }
+
+    .Tratamientos_title {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: black;
+        /* Aseguramos color para que contraste con el fondo */
+    }
+
+    .Tratamientos_text {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #444;
+    }
+
+    /* =========================================
+       4. CONTENEDOR DE CARDS
+       ========================================= */
+    #cards-container {
+        position: relative !important;
+        top: auto !important;
+        width: 90%;
+        max-width: 1200px;
+        background: transparent;
+        /* Importante: fondo transparente para ver la imagen detrás */
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+
+        order: 2;
+        /* Aparece segundo */
+        z-index: 2;
+        /* Se asegura de estar sobre el fondo */
+    }
+
+    /* --- Estilos de las cards (2 columnas) --- */
+    .treatment-card {
+        width: calc(50% - 10px);
+        height: 220px;
+    }
+
+    /* Ajuste para el efecto slide en cards anchas */
+    .t-card-info,
+    .t-card-image {
+        width: 50%;
+    }
+
+    /* Ajustes de texto interno de las cards para escritorio */
+    .t-card-title {
+        width: 90%;
+        font-size: 14px;
+        /* Un poco más grande en escritorio */
+    }
+
+    .t-card-desc {
+        width: 90%;
+        -webkit-line-clamp: 6;
+        /* Muestra más líneas de texto */
+        max-height: 9em;
+    }
+
+
+
+
+    /* =========================================
+       SECCIÓN BIENVENIDA (ESCRITORIO)
+       ========================================= */
+
+    /* 1. Contenedor Principal */
+    #Bienvenida_Section {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        top: 0 !important;
+        padding: 60px 0;
+        /* Espacio arriba y abajo */
+        background-color: white;
+        /* Aseguramos fondo limpio */
+        display: flex;
+        justify-content: center;
+    }
+
+    /* 2. Contenedor Interno */
+    .BienvenidosAMicael {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        left: auto !important;
+        top: auto !important;
+
+        /* Flexbox para alinear todo al centro verticalmente */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 3. Título "Bienvenidos a Micael" */
+    .BienvenidosAMicael_text {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        text-align: center;
+
+        font-size: 36px;
+        /* Más grande e impactante */
+        margin-bottom: 25px;
+    }
+
+    /* 4. Texto descriptivo */
+    .Bienvenida_text {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 90% !important;
+        max-width: 800px;
+        /* Evitamos que el texto se estire de borde a borde */
+        height: auto !important;
+        text-align: center;
+
+        font-size: 18px;
+        /* Texto más legible */
+        line-height: 1.6;
+    }
+
+
+    /* =========================================
+       SECCIÓN AGENDA (ESCRITORIO)
+       ========================================= */
+
+    /* 1. Contenedor Principal */
+    #profesionales {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        top: 0 !important;
+        margin-top: 0;
+    }
+
+    /* 2. Fondo Gradiente */
+    .Agenda {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        left: 0 !important;
+        top: 0 !important;
+        padding: 60px 0 80px 0;
+        /* Buen espacio interior */
+
+        /* Flexbox para ordenar los elementos en columna */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 3. Título Principal */
+    .Agenda_text2 {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        text-align: center;
+
+        font-size: 32px;
+        margin-bottom: 20px;
+        order: 1;
+        /* Forzamos el orden: Primero el título */
+    }
+
+    /* 4. Subtítulo (Texto largo) */
+    .Agenda_text {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 90% !important;
+        max-width: 700px;
+        height: auto !important;
+        text-align: center;
+
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 40px;
+        order: 2;
+        /* Segundo el texto */
+    }
+
+    /* --- EL BOTÓN (Rectángulo + Texto) --- */
+    /* Como en tu HTML son elementos separados, los ordenamos con cuidado */
+
+    /* El rectángulo gris (Fondo del botón) */
+    .Rectangle11 {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 300px !important;
+        /* Botón más ancho en escritorio */
+        height: 50px !important;
+        /* Botón más alto */
+        border-radius: 25px;
+        /* Más redondeado */
+        cursor: pointer;
+        transition: transform 0.2s;
+
+        order: 3;
+        /* Tercero el botón */
+        margin-bottom: 0;
+        /* Quitamos márgenes extraños */
+    }
+
+    /* El texto del botón ("Agende su primera consulta") */
+    .AgendeSuPrimeraConsulta {
+        position: relative !important;
+        /* Lo hacemos relativo para moverlo con margin */
+        left: auto !important;
+        top: auto !important;
+        width: 300px !important;
+        /* Mismo ancho que el botón */
+        height: auto !important;
+        text-align: center;
+
+        /* TRUCO: Margen negativo para subir el texto encima del rectángulo */
+        margin-top: -36px;
+
+        font-size: 16px;
+        font-weight: 800;
+        pointer-events: none;
+        /* Para que el click pase al botón de abajo */
+        order: 4;
+        z-index: 5;
+    }
+
+    /* Efecto Hover simple para el botón */
+    .Rectangle11:hover {
+        transform: scale(1.05);
+        background-color: #e0e0e0;
+    }
+
+    .Slider {
+        width: 95% !important;
+        justify-self: center;
+
+        top: 20px !important;
+    }
+
+    .Frame1 {
+        bottom: 0px;
+        top: 730px;
+    }
+
+    #Slider_Section {
+        height: 95%;
+    }
+
+
+    #Slider_Section {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        /* Dejamos que el contenido defina la altura */
+        display: flex;
+        flex-direction: column;
+        /* Ordenamos verticalmente: Slider arriba, Puntos abajo */
+        align-items: center;
+        /* Centramos horizontalmente */
+        padding-top: 20px;
+        /* Un poco de aire arriba */
+        padding-bottom: 40px;
+        /* Aire abajo */
+    }
+
+    /* 2. El botón "VER MÁS" (Opcional: Ajustar posición si es necesario) */
+    .slider-top-btn {
+        /* Si quieres que quede flotando sobre el slider, asegúrate de que tenga z-index alto */
+        z-index: 20;
+        /* Puedes ajustar su posición aquí si se mueve */
+    }
+
+    /* 3. El Contenedor del Slider (La caja de las fotos) */
+    .Slider {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+
+        /* ANCHO: Ocupa el 95% de la pantalla, pero con un límite máximo */
+        width: 95% !important;
+        max-width: 1600px;
+
+        /* ALTURA: Determinada por el ancho (Relación de Aspecto) */
+        /* 16 / 9 es formato TV estándar. 
+           Si lo quieres más "panorámico" (finito), usa 21 / 9. 
+           Si lo quieres más cuadrado, usa 4 / 3. */
+        aspect-ratio: 16 / 9;
+        height: auto !important;
+        /* Importante para que el aspect-ratio mande */
+
+        overflow: hidden;
+        border-radius: 10px;
+        /* Opcional: bordes redondeados en escritorio */
+    }
+
+    /* 4. Contenedor interno de imágenes */
+    .slider-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    /* 5. Las Imágenes */
+    .slider-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* CLAVE: Recorta la imagen para llenar el espacio sin deformarla */
+        object-position: center;
+        position: absolute;
+        /* Para que se superpongan para el efecto slider */
+        top: 0;
+        left: 0;
+    }
+
+    /* 6. Los Puntos (Frame 1) */
+    .Frame1 {
+        /* Reseteamos todo el posicionamiento absoluto del móvil */
+        position: relative !important;
+        left: 40px;
+        top: auto !important;
+        bottom: auto !important;
+        width: auto !important;
+        height: auto !important;
+
+        /* UBICACIÓN: Justo debajo del slider */
+        margin-top: 20px !important;
+
+        /* Flexbox para alinear los puntitos */
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        /* Espacio entre cada punto */
+
+        background-color: transparent;
+        /* Por si tenía fondo */
+    }
+
+    /* Aseguramos que los puntos se vean bien (reset de transformaciones móviles) */
+    .dot {
+        transform: none !important;
+        cursor: pointer;
+    }
+
+    .container {
+        max-width: 95% !important;
+    }
+
+    .card-note__media {
+        width: 100%;
+        height: 500px !important;
+    }
+
+}
+
+
+/* =========================================
+   SISTEMA DUAL (MOBILE vs DESKTOP)
+   ========================================= */
+
+/* Por defecto (Mobile First): Ocultamos la vista de escritorio */
+.desktop-only-view {
+    display: none;
+}
+.mobile-only-view {
+    display: block;
+}
+
+/* =========================================
+   MEDIA QUERY DESKTOP (>= 1025px)
+   ========================================= */
+@media (min-width: 1025px) {
+
+    /* 1. APAGADO Y ENCENDIDO */
+    .mobile-only-view {
+        display: none !important; /* Oculta las secciones viejas */
+    }
+    .desktop-only-view {
+        display: block !important; /* Muestra la nueva sección */
+    }
+
+    /* 2. CONTENEDOR PRINCIPAL DESKTOP */
+    #Contacto_Domicilio_Desktop {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 60px 0 100px 0;
+        background: white; /* Fondo limpio */
+        display: flex;
+        justify-content: center;
+    }
+
+    .desktop-wrapper {
+        width: 90%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 3. ENCABEZADO (TITULO Y WHATSAPP) */
+    .desktop-header {
+        text-align: center;
+        margin-bottom: 50px;
+        width: 100%;
+    }
+    
+    /* Reutilizamos tus clases pero forzamos centrado y anchos */
+    .desktop-header .contacto-title,
+    .desktop-header .whatsapp-info,
+    .desktop-header .form-description {
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    /* 4. ESTRUCTURA FLEX (LADO A LADO) */
+    .desktop-body-flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: center; /* Centrados en la pantalla */
+        align-items: flex-start; /* Alineados arriba */
+        gap: 60px; /* Espacio entre formulario y mapa */
+        width: 100%;
+    }
+
+    /* --- COLUMNA IZQUIERDA (FORMULARIO) --- */
+    .desktop-col-left {
+        flex: 1; /* Ocupa espacio disponible */
+        max-width: 450px; /* No dejar que se haga gigante */
+        display: flex;
+        justify-content: flex-end; /* Pegarlo visualmente hacia el centro */
+    }
+
+    /* Ajustes al formulario en desktop */
+    .desktop-form-style {
+        width: 100% !important; /* Que ocupe el ancho de su columna */
+        max-width: 100%;
+    }
+    
+    .desktop-form-style .form-question,
+    .desktop-form-style .required-note {
+        width: auto !important; /* Resetear anchos fijos */
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    
+    .desktop-form-style .form-field {
+        width: 100% !important; /* Inputs fluidos */
+        box-sizing: border-box; /* Para que el padding no rompa el ancho */
+    }
+
+    /* --- COLUMNA DERECHA (MAPA Y DIRECCION) --- */
+    .desktop-col-right {
+        flex: 1;
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinear textos a la izquierda del bloque */
+    }
+
+    /* Título Domicilio en Desktop */
+    .desktop-dom-title {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        margin-bottom: 15px;
+        width: 100% !important;
+        text-align: left; /* Alineado a la izquierda sobre el mapa */
+    }
+
+    /* Dirección texto */
+    .desktop-address {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 20px;
+        font-size: 16px; /* Un poco más grande en desktop */
+    }
+
+    /* Mapa */
+    .desktop-map-frame {
+        position: relative !important;
+        top: auto !important;
+        width: 100% !important;
+        height: 350px !important; /* Altura fija para desktop */
+        padding-bottom: 0 !important; /* Quitamos el ratio responsive de móvil */
+        border-radius: 10px; /* Estético */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+}
+
+/* =========================================
+   SISTEMA DUAL (MOBILE vs DESKTOP)
+   ========================================= */
+
+/* Por defecto (Mobile First): Ocultamos la vista de escritorio */
+.desktop-only-view {
+    display: none;
+}
+.mobile-only-view {
+    display: block;
+}
+
+/* =========================================
+   MEDIA QUERY DESKTOP (>= 1025px)
+   ========================================= */
+@media (min-width: 1025px) {
+
+    /* 1. APAGADO Y ENCENDIDO */
+    .mobile-only-view {
+        display: none !important; /* Oculta las secciones viejas */
+    }
+    .desktop-only-view {
+        display: block !important; /* Muestra la nueva sección */
+    }
+
+    /* 2. CONTENEDOR PRINCIPAL DESKTOP */
+    #Contacto_Domicilio_Desktop {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 60px 0 100px 0;
+        background: white; /* Fondo limpio */
+        display: flex;
+        justify-content: center;
+    }
+
+    .desktop-wrapper {
+        width: 90%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+    }
+
+    /* 3. ENCABEZADO (TITULO Y WHATSAPP) */
+    .desktop-header {
+        text-align: center;
+        margin-bottom: 50px;
+        width: 100%;
+    }
+    
+    /* Reutilizamos tus clases pero forzamos centrado y anchos */
+    .desktop-header .contacto-title,
+    .desktop-header .whatsapp-info,
+    .desktop-header .form-description {
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    /* 4. ESTRUCTURA FLEX (LADO A LADO) */
+    .desktop-body-flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: center; /* Centrados en la pantalla */
+        align-items: flex-start; /* Alineados arriba */
+        gap: 60px; /* Espacio entre formulario y mapa */
+        width: 100%;
+    }
+
+    /* --- COLUMNA IZQUIERDA (FORMULARIO) --- */
+    .desktop-col-left {
+        flex: 1; /* Ocupa espacio disponible */
+        max-width: 450px; /* No dejar que se haga gigante */
+        display: flex;
+        justify-content: flex-end; /* Pegarlo visualmente hacia el centro */
+    }
+
+    /* Ajustes al formulario en desktop */
+    .desktop-form-style {
+        width: 100% !important; /* Que ocupe el ancho de su columna */
+        max-width: 100%;
+    }
+    
+    .desktop-form-style .form-question,
+    .desktop-form-style .required-note {
+        width: auto !important; /* Resetear anchos fijos */
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    
+    .desktop-form-style .form-field {
+        width: 100% !important; /* Inputs fluidos */
+        box-sizing: border-box; /* Para que el padding no rompa el ancho */
+    }
+
+    /* --- COLUMNA DERECHA (MAPA Y DIRECCION) --- */
+    .desktop-col-right {
+        flex: 1;
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinear textos a la izquierda del bloque */
+    }
+
+    /* Título Domicilio en Desktop */
+    .desktop-dom-title {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        margin-bottom: 15px;
+        width: 100% !important;
+        text-align: left; /* Alineado a la izquierda sobre el mapa */
+    }
+
+    /* Dirección texto */
+    .desktop-address {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 20px;
+        font-size: 16px; /* Un poco más grande en desktop */
+    }
+
+    /* Mapa */
+    .desktop-map-frame {
+        position: relative !important;
+        top: auto !important;
+        width: 100% !important;
+        height: 350px !important; /* Altura fija para desktop */
+        padding-bottom: 0 !important; /* Quitamos el ratio responsive de móvil */
+        border-radius: 10px; /* Estético */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+}

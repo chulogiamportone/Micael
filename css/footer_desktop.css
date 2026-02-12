@@ -1,0 +1,190 @@
+/* =========================================
+   LOGICA DEL INTERRUPTOR (SWITCH)
+   ========================================= */
+
+/* Por defecto (Móvil): Ocultamos el desktop, mostramos el mobile */
+#footer-mobile-version {
+    display: block;
+    /* Asegúrate de que tu contenedor mobile no tenga restricciones raras aquí */
+}
+
+#footer-desktop-version {
+    display: none;
+}
+
+/* A partir de 1025px (Desktop): Invertimos la visibilidad */
+@media (min-width: 1025px) {
+    #footer-mobile-version {
+        display: none !important;
+        /* Forzamos ocultar el viejo */
+    }
+
+    #footer-desktop-version {
+        display: block !important;
+        /* Mostramos el nuevo */
+    }
+}
+
+/* =========================================
+   ESTILOS VISUALES DEL FOOTER DESKTOP
+   ========================================= */
+
+#footer-desktop-version {
+    width: 100%;
+    background: linear-gradient(180deg, #824C91 0%, #4C2C53 100%);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 50px 0;
+}
+
+.footer-desktop-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    /* Distribuye las 3 columnas */
+    align-items: flex-start;
+    padding: 0 40px;
+}
+
+/* --- COLUMNAS GENÉRICAS --- */
+.fd-col {
+    flex: 1;
+    /* Cada columna ocupa el mismo espacio base */
+}
+
+/* SEPARADOR VERTICAL */
+.fd-divider {
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 150px;
+    /* Altura fija para la línea */
+    margin: 0 30px;
+    align-self: center;
+}
+
+/* --- COLUMNA 1: MARCA --- */
+.fd-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fd-title {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+}
+
+.fd-director {
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.fd-director span {
+    font-weight: 300;
+    font-size: 13px;
+}
+
+/* --- COLUMNA 2: CONTACTO --- */
+.fd-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 13px;
+}
+
+.fd-item-text p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.fd-item-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    gap: 10px;
+    transition: opacity 0.3s;
+}
+
+.fd-item-link:hover {
+    opacity: 0.8;
+}
+
+.fd-item-link img {
+    width: 20px;
+    height: auto;
+}
+
+/* --- COLUMNA 3: NAV + SOCIAL --- */
+.fd-nav-social {
+    display: flex;
+    justify-content: space-between;
+    /* Menú a la izq, redes a la derecha */
+}
+
+.fd-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fd-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.fd-nav a:hover {
+    text-decoration: underline;
+}
+
+.fd-social {
+    display: flex;
+    gap: 15px;
+}
+
+.fd-social img {
+    width: 24px;
+    height: auto;
+    transition: transform 0.2s;
+}
+
+.fd-social img:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================
+       1. AJUSTE DE ÍCONOS (FOOTER / CONTACTO)
+       ========================================= */
+
+/* Forzamos que las imágenes dentro del footer o sección de contacto
+       tengan un tamaño controlado y no ocupen el 100% del ancho */
+footer img,
+.contacto-container img,
+.social-icon img {
+    width: 30px !important;
+    /* Ajusta este número (ej: 24px, 40px) según prefieras */
+    height: auto !important;
+    max-width: 100% !important;
+    display: inline-block !important;
+    /* Para que se pongan uno al lado del otro */
+    margin: 0 10px;
+    /* Un poco de separación entre ellos */
+}
+
+/* Si los iconos están dentro de un contenedor flex, alinealos */
+.redes-sociales-container {
+    display: flex;
+    justify-content: center;
+    /* O flex-end, según tu diseño */
+    align-items: center;
+    gap: 15px;
+}
+

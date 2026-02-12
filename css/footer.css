@@ -1,9 +1,12 @@
 /* Clases internas del HTML inyectado */
 .Footer {
-    width: 100%; /* Que ocupe el ancho del padre (430px) */
-    height: 801px; /* Mantén tu altura de diseño */
-    position: relative; /* CAMBIO IMPORTANTE: Relative en vez de absolute */
-    top: auto; 
+    width: 100%;
+    /* Que ocupe el ancho del padre (430px) */
+
+    /* Mantén tu altura de diseño */
+    position: relative;
+    /* CAMBIO IMPORTANTE: Relative en vez de absolute */
+    top: auto;
     left: auto;
     overflow: hidden;
 }
@@ -11,7 +14,8 @@
 .Footer2 {
     width: 100%;
     height: 100%;
-    position: relative; /* Relative para seguir el flujo */
+    position: relative;
+    /* Relative para seguir el flujo */
     top: auto;
     left: auto;
 }
@@ -20,61 +24,66 @@
     width: 100%;
     height: 100%;
     position: relative;
-    background: linear-gradient(180deg, #824C91 0%, #4C2C53 100%); 
+    background: linear-gradient(180deg, #824C91 0%, #4C2C53 100%);
 }
 
-.Redes{
-    width: 200px; 
-    height: 20px; 
-    top: 750px; 
-    position: absolute; 
+.Redes {
+    width: 200px;
+    height: 20px;
+    top: 750px;
+    position: absolute;
     overflow: hidden;
     display: flex;
     justify-content: space-around;
     justify-self: center;
 }
-.Youtube{
-    top: 0px; 
-}
-.Instagram{ 
-    top: 0px; 
-}
-.Facebook{
-    top: 0px; 
+
+.Youtube {
+    top: 0px;
 }
 
+.Instagram {
+    top: 0px;
+}
+
+.Facebook {
+    top: 0px;
+}
 
 
 
-.menu_content{
-    width: 128px; 
-    left: 0px; 
-    top: 0px; 
-    position: absolute; 
-    text-align: center; 
-    justify-content: center; 
-    display: flex; 
-    flex-direction: column; 
-    color: white; 
-    font-size: 16px; 
-    font-family: Montserrat; 
-    font-weight: 500; 
-    line-height: 23px; 
+
+.menu_content {
+    width: 128px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 500;
+    line-height: 23px;
     word-wrap: break-word;
 }
 
-.MarcaMicaelF{
-    width: 317px; 
-    height: 132px; 
-    left: 57px; 
-    top: 19.91px; 
-    position: absolute; 
+.MarcaMicaelF {
+    width: 317px;
+    height: 132px;
+    left: 57px;
+    top: 19.91px;
+    position: absolute;
     overflow: hidden;
 }
-.MicaelMarcaF1{
-    width: 310.41px; 
-    height: 125.19px; 
-    left: 3.30px; 
-    top: 3.40px; 
+
+.MicaelMarcaF1 {
+    width: 310.41px;
+    height: 125.19px;
+    left: 3.30px;
+    top: 3.40px;
     position: absolute;
 }
+
