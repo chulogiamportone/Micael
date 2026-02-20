@@ -145,7 +145,7 @@ async function listarTodosLosProfesionales(section, API) {
               
               <div class="card-container">
                 <div class="professional-card">
-                  ${p.imagen ? `<img class="profile-image" src="${escapeAttr(p.imagen)}" alt="${escapeAttr(p.nombre)}" />` : ""}
+                  ${p.imagen ? `<img class="profile-image" src="${escapeAttr(p.imagen)}" alt="${escapeAttr(p.nombre)}" loading="lazy" />` : ""}
                   
                   <div class="card-info">
                     <div class="professional-name">
@@ -159,9 +159,9 @@ async function listarTodosLosProfesionales(section, API) {
                     ` : ""}
                     
                     <div class="button-container">
-                      <a class="details-button" href="?id=${encodeURIComponent(p.id)}">
+                      <button class="details-button" onclick="irAlDetalle('${encodeURIComponent(p.id)}')">
                         LEER MÁS DETALLES DE FORMACIÓN
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -172,8 +172,14 @@ async function listarTodosLosProfesionales(section, API) {
       `;
     } catch (e) {
         console.error(e);
-        section.innerHTML = `<p>Error de conexión</p>`;
+        section.innerHTML = `<p>Error de conexión al cargar la lista</p>`;
     }
+}
+
+// Agrega esta función al final de tu archivo JS (fuera de cualquier otra función)
+function irAlDetalle(id) {
+    // Esto obliga al navegador a ir a profesional.html sí o sí
+    window.location.assign(`profesionales?id=${id}`);
 }
 
 async function inicializarNavegacion(API, idActual) {
