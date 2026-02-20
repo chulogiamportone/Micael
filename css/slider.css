@@ -43,7 +43,7 @@
     top: 300px;
     display: flex;
     gap: 15px;
-    z-index: 10;
+    z-index: 8;
 }
 
 /* Cada dot */
@@ -71,7 +71,7 @@
     top: 83%; /* Distancia desde el borde superior */
     left: 50%;
     transform: translateX(-50%); /* Truco para centrarlo horizontalmente exacto */
-    z-index: 20; /* Para que aparezca por encima de las fotos */
+    z-index: 8; /* Para que aparezca por encima de las fotos */
 
     /* Estilos visuales (Copiados de tu identidad de marca) */
     background: linear-gradient(180deg, #824C91 0%, #4C2C53 100%);

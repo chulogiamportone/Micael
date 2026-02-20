@@ -1,0 +1,33 @@
+/* =========================================
+   FIX DESKTOP: AJUSTE DE NAVBAR Y CONTENIDO
+   (Solo aplica en pantallas mayores a 1025px)
+   ========================================= */
+@media (min-width: 1025px) {
+
+    .TTulo {
+        padding-top: 0px !important;
+        zoom: 2;
+    }
+
+    .card-imagen-container {
+
+        height: 500px;
+    }
+
+    .notas-body {
+        zoom: 2;
+        display: block;
+        column-count: 2;
+    }
+
+  
+    .card-header {
+        zoom: 2;
+    }
+
+    .nota-item {
+        break-inside: avoid;
+        height: 150px;
+    }
+}
+

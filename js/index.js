@@ -95,7 +95,7 @@ window.initCards = initCards;
 // Este script inyecta las últimas 2 notas en .notas-body
 document.addEventListener("DOMContentLoaded", () => {
   const API = "/api/nota_get.php";
-  const container = document.querySelector(".notas-body");
+  const container = document.querySelector(".notas-body_blog");
   if (!container) return;
 
   // Helpers seguros

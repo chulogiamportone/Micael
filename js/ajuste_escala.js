@@ -10,7 +10,7 @@ function ajustarEscala() {
 
     // --- LÓGICA ESPECIAL PARA EL INDEX (Escritorio) ---
     // Si es el index Y la pantalla es grande (> 1024px)
-    if (esIndex && anchoVentana > 1024) {
+    if ( anchoVentana > 1024) {
         document.body.style.zoom = "1"; // Quitamos el zoom
         document.body.classList.add('desktop-view');
         document.body.classList.remove('mobile-scaled');

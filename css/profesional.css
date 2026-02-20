@@ -12,54 +12,64 @@ body {
 /* =========================================
    1. ESTRUCTURA FIJA (OBLIGATORIO PARA EL SCRIPT DE ESCALA)
    ========================================= */
-   .main-wrapper {
-        
-        background-color: white;
-        position: relative;
-        overflow-x: hidden;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-    header,
-    footer,
-    .Footer{
-        width: 100% !important;
-        position: relative !important;
-        left: auto !important;
-        top: auto !important;
-        box-sizing: border-box !important;
-        transform: none !important;
-    }
-    section,
-    .TTulo {
-        position: relative !important;
-        left: auto !important;
-        top: auto !important;
-        box-sizing: border-box !important;
-        transform: none !important;
-        justify-self: center;
-    }
-    .nota-item{
-        justify-self: center;
-    }
+.main-wrapper {
+
+    background-color: white;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+footer,
+.Footer {
+    width: 100% !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+}
+
+section,
+.TTulo {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+    justify-self: center;
+
+}
+
+.nota-item {
+    justify-self: center;
+}
+
 /* Definimos el lienzo base de 430px */
 @media (max-width: 1024px) {
+
     .main-wrapper {
         width: 430px !important;
         max-width: 430px !important;
         margin: 0 auto;
     }
-    
+
     section,
     .TTulo {
         width: 100% !important;
         max-width: 430px !important;
     }
-    
+
+    .TTulo {
+        padding-top: 200px;
+    }
+
 
     /* Header, Footer y Secciones se ajustan a esos 430px */
-    
+
 }
 
 /* =========================================
@@ -292,7 +302,7 @@ footer {
     background: linear-gradient(180deg, #824C91 0%, #4C2C53 100%);
     padding: 15px 20px;
     text-align: center;
-    display: flex;
+
     justify-content: center;
     align-items: center;
     min-height: 85px;
@@ -345,4 +355,25 @@ footer {
     line-height: 1.4;
     font-weight: 500;
     margin: 0;
+}
+
+@media (min-width: 1025px) {
+    .notas-body {
+        zoom: 2;
+    }
+
+    .card-header {
+        zoom: 2;
+    }
+
+    .TTulo {
+        padding-top: 50px !important;
+        zoom: 2;
+    }
+}
+
+@media (max-width: 1024px) {
+    .TTulo {
+        padding-top: 200px;
+    }
 }

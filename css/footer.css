@@ -1,8 +1,19 @@
 /* Clases internas del HTML inyectado */
+@media (max-width: 1024px) {
+.Footer {
+    
+    /* Que ocupe el ancho del padre (430px) */
+    height: 801px;}
+    
+}
+
+
+
+
 .Footer {
     width: 100%;
     /* Que ocupe el ancho del padre (430px) */
-
+   
     /* Mantén tu altura de diseño */
     position: relative;
     /* CAMBIO IMPORTANTE: Relative en vez de absolute */

@@ -6,7 +6,7 @@
 
 @media (min-width: 1025px) {
 
-
+  
 
     .main-wrapper {
         max-width: 100%;
@@ -34,6 +34,7 @@
         /* overflow: hidden; Opcional: si la imagen se sale un poco por algún borde */
     }
 
+
     /* =========================================
        2. IMAGEN DE FONDO (CUBRE TODO)
        ========================================= */
@@ -45,7 +46,7 @@
         width: 100% !important;
         height: 100% !important;
         /* Ocupa toda la altura de la sección #tratamientos */
-        z-index: -1;
+        z-index: 0;
         /* MAGIA: Se coloca DETRÁS de todo el contenido de esta sección */
         pointer-events: none;
         /* Buena práctica: evita que la imagen de fondo bloquee clicks en las cards */
@@ -53,13 +54,13 @@
 
     /* La imagen real */
     .EstetoscopioPixabay1 {
-        width: 100% !important;
+        width: 110% !important;
         height: 100% !important;
         object-fit: cover !important;
         /* Estira la imagen para cubrir el área sin deformarla */
         object-position: center center;
         /* Centra la imagen */
-        opacity: 0.12;
+  
         /* Muy sutil para que se lea bien el texto encima. Ajusta este valor si quieres */
     }
 
@@ -70,13 +71,14 @@
         position: relative !important;
         width: 90% !important;
         max-width: 800px;
-        height: auto !important;
+        height: 200px !important;
         margin-bottom: 50px;
         text-align: center;
         order: 1;
         /* Aparece primero */
         z-index: 2;
         /* Se asegura de estar sobre el fondo (aunque el fondo sea -1, esto es más seguro) */
+        align-content: end;
     }
 
     .Tratamientos_title {
@@ -122,12 +124,23 @@
         /* Aparece segundo */
         z-index: 2;
         /* Se asegura de estar sobre el fondo */
+
+        display: block; /* Apaga flexbox solo en desktop */
+        column-count: 2; /* Crea las dos columnas */
+        column-gap: 20px;
+
+        
     }
 
     /* --- Estilos de las cards (2 columnas) --- */
     .treatment-card {
-        width: calc(50% - 10px);
+        width: 100%; 
         height: 220px;
+        margin-bottom: 20px; /* Reemplaza el gap vertical que daba flexbox */
+        break-inside: avoid; /* Evita que una tarjeta se rompa a la mitad */
+        
+        /* Aseguramos que la tarjeta siga siendo display: flex por dentro (como tenías antes) */
+        display: flex;
     }
 
     /* Ajuste para el efecto slide en cards anchas */
@@ -330,7 +343,7 @@
     }
 
     .Slider {
-        width: 95% !important;
+        width: 80% !important;
         justify-self: center;
 
         top: 20px !important;
@@ -376,7 +389,7 @@
         top: auto !important;
 
         /* ANCHO: Ocupa el 95% de la pantalla, pero con un límite máximo */
-        width: 95% !important;
+        width: 80% !important;
         max-width: 1600px;
 
         /* ALTURA: Determinada por el ancho (Relación de Aspecto) */
@@ -461,6 +474,7 @@
 .desktop-only-view {
     display: none;
 }
+
 .mobile-only-view {
     display: block;
 }
@@ -472,10 +486,13 @@
 
     /* 1. APAGADO Y ENCENDIDO */
     .mobile-only-view {
-        display: none !important; /* Oculta las secciones viejas */
+        display: none !important;
+        /* Oculta las secciones viejas */
     }
+
     .desktop-only-view {
-        display: block !important; /* Muestra la nueva sección */
+        display: block !important;
+        /* Muestra la nueva sección */
     }
 
     /* 2. CONTENEDOR PRINCIPAL DESKTOP */
@@ -484,7 +501,8 @@
         width: 100% !important;
         height: auto !important;
         padding: 60px 0 100px 0;
-        background: white; /* Fondo limpio */
+        background: white;
+        /* Fondo limpio */
         display: flex;
         justify-content: center;
     }
@@ -503,7 +521,7 @@
         margin-bottom: 50px;
         width: 100%;
     }
-    
+
     /* Reutilizamos tus clases pero forzamos centrado y anchos */
     .desktop-header .contacto-title,
     .desktop-header .whatsapp-info,
@@ -518,36 +536,46 @@
     .desktop-body-flex {
         display: flex;
         flex-direction: row;
-        justify-content: center; /* Centrados en la pantalla */
-        align-items: flex-start; /* Alineados arriba */
-        gap: 60px; /* Espacio entre formulario y mapa */
+        justify-content: center;
+        /* Centrados en la pantalla */
+        align-items: flex-start;
+        /* Alineados arriba */
+        gap: 60px;
+        /* Espacio entre formulario y mapa */
         width: 100%;
     }
 
     /* --- COLUMNA IZQUIERDA (FORMULARIO) --- */
     .desktop-col-left {
-        flex: 1; /* Ocupa espacio disponible */
-        max-width: 450px; /* No dejar que se haga gigante */
+        flex: 1;
+        /* Ocupa espacio disponible */
+        max-width: 450px;
+        /* No dejar que se haga gigante */
         display: flex;
-        justify-content: flex-end; /* Pegarlo visualmente hacia el centro */
+        justify-content: flex-end;
+        /* Pegarlo visualmente hacia el centro */
     }
 
     /* Ajustes al formulario en desktop */
     .desktop-form-style {
-        width: 100% !important; /* Que ocupe el ancho de su columna */
+        width: 100% !important;
+        /* Que ocupe el ancho de su columna */
         max-width: 100%;
     }
-    
+
     .desktop-form-style .form-question,
     .desktop-form-style .required-note {
-        width: auto !important; /* Resetear anchos fijos */
+        width: auto !important;
+        /* Resetear anchos fijos */
         margin-left: 15px;
         margin-right: 15px;
     }
-    
+
     .desktop-form-style .form-field {
-        width: 100% !important; /* Inputs fluidos */
-        box-sizing: border-box; /* Para que el padding no rompa el ancho */
+        width: 100% !important;
+        /* Inputs fluidos */
+        box-sizing: border-box;
+        /* Para que el padding no rompa el ancho */
     }
 
     /* --- COLUMNA DERECHA (MAPA Y DIRECCION) --- */
@@ -556,7 +584,8 @@
         max-width: 450px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* Alinear textos a la izquierda del bloque */
+        align-items: flex-start;
+        /* Alinear textos a la izquierda del bloque */
     }
 
     /* Título Domicilio en Desktop */
@@ -566,7 +595,8 @@
         top: auto !important;
         margin-bottom: 15px;
         width: 100% !important;
-        text-align: left; /* Alineado a la izquierda sobre el mapa */
+        text-align: left;
+        /* Alineado a la izquierda sobre el mapa */
     }
 
     /* Dirección texto */
@@ -577,7 +607,8 @@
         width: 100% !important;
         height: auto !important;
         margin-bottom: 20px;
-        font-size: 16px; /* Un poco más grande en desktop */
+        font-size: 16px;
+        /* Un poco más grande en desktop */
     }
 
     /* Mapa */
@@ -585,11 +616,20 @@
         position: relative !important;
         top: auto !important;
         width: 100% !important;
-        height: 350px !important; /* Altura fija para desktop */
-        padding-bottom: 0 !important; /* Quitamos el ratio responsive de móvil */
-        border-radius: 10px; /* Estético */
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        height: 350px !important;
+        /* Altura fija para desktop */
+        padding-bottom: 0 !important;
+        /* Quitamos el ratio responsive de móvil */
+        border-radius: 10px;
+        /* Estético */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
+
+    .blog-latest__heading {
+        font-size: 32px !important;
+    }
+
 }
 
 /* =========================================
@@ -600,6 +640,7 @@
 .desktop-only-view {
     display: none;
 }
+
 .mobile-only-view {
     display: block;
 }
@@ -611,10 +652,13 @@
 
     /* 1. APAGADO Y ENCENDIDO */
     .mobile-only-view {
-        display: none !important; /* Oculta las secciones viejas */
+        display: none !important;
+        /* Oculta las secciones viejas */
     }
+
     .desktop-only-view {
-        display: block !important; /* Muestra la nueva sección */
+        display: block !important;
+        /* Muestra la nueva sección */
     }
 
     /* 2. CONTENEDOR PRINCIPAL DESKTOP */
@@ -623,7 +667,8 @@
         width: 100% !important;
         height: auto !important;
         padding: 60px 0 100px 0;
-        background: white; /* Fondo limpio */
+        background: white;
+        /* Fondo limpio */
         display: flex;
         justify-content: center;
     }
@@ -643,51 +688,70 @@
         margin-bottom: 50px;
         width: 100%;
     }
-    
+
     /* Reutilizamos tus clases pero forzamos centrado y anchos */
-    .desktop-header .contacto-title,
+    .desktop-header .contacto-title {
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 15px;
+        text-align: center;
+        font-size: 32px;
+    }
+
+
     .desktop-header .whatsapp-info,
     .desktop-header .form-description {
         width: 100% !important;
         height: auto !important;
         margin-bottom: 15px;
         text-align: center;
+        font-size: 18px;
     }
 
     /* 4. ESTRUCTURA FLEX (LADO A LADO) */
     .desktop-body-flex {
         display: flex;
         flex-direction: row;
-        justify-content: center; /* Centrados en la pantalla */
-        align-items: flex-start; /* Alineados arriba */
-        gap: 60px; /* Espacio entre formulario y mapa */
+        justify-content: center;
+        /* Centrados en la pantalla */
+        align-items: flex-start;
+        /* Alineados arriba */
+        gap: 60px;
+        /* Espacio entre formulario y mapa */
         width: 100%;
     }
 
     /* --- COLUMNA IZQUIERDA (FORMULARIO) --- */
     .desktop-col-left {
-        flex: 1; /* Ocupa espacio disponible */
-        max-width: 450px; /* No dejar que se haga gigante */
+        flex: 1;
+        /* Ocupa espacio disponible */
+        max-width: 450px;
+        /* No dejar que se haga gigante */
         display: flex;
-        justify-content: flex-end; /* Pegarlo visualmente hacia el centro */
+        justify-content: flex-end;
+        /* Pegarlo visualmente hacia el centro */
     }
 
     /* Ajustes al formulario en desktop */
     .desktop-form-style {
-        width: 100% !important; /* Que ocupe el ancho de su columna */
+        width: 100% !important;
+        /* Que ocupe el ancho de su columna */
         max-width: 100%;
     }
-    
+
     .desktop-form-style .form-question,
     .desktop-form-style .required-note {
-        width: auto !important; /* Resetear anchos fijos */
+        width: auto !important;
+        /* Resetear anchos fijos */
         margin-left: 15px;
         margin-right: 15px;
     }
-    
+
     .desktop-form-style .form-field {
-        width: 100% !important; /* Inputs fluidos */
-        box-sizing: border-box; /* Para que el padding no rompa el ancho */
+        width: 100% !important;
+        /* Inputs fluidos */
+        box-sizing: border-box;
+        /* Para que el padding no rompa el ancho */
     }
 
     /* --- COLUMNA DERECHA (MAPA Y DIRECCION) --- */
@@ -696,7 +760,8 @@
         max-width: 450px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* Alinear textos a la izquierda del bloque */
+        align-items: flex-start;
+        /* Alinear textos a la izquierda del bloque */
     }
 
     /* Título Domicilio en Desktop */
@@ -706,7 +771,9 @@
         top: auto !important;
         margin-bottom: 15px;
         width: 100% !important;
-        text-align: left; /* Alineado a la izquierda sobre el mapa */
+        text-align: left;
+        /* Alineado a la izquierda sobre el mapa */
+        font-size: 26px;
     }
 
     /* Dirección texto */
@@ -717,7 +784,8 @@
         width: 100% !important;
         height: auto !important;
         margin-bottom: 20px;
-        font-size: 16px; /* Un poco más grande en desktop */
+        font-size: 16px;
+        /* Un poco más grande en desktop */
     }
 
     /* Mapa */
@@ -725,9 +793,54 @@
         position: relative !important;
         top: auto !important;
         width: 100% !important;
-        height: 350px !important; /* Altura fija para desktop */
-        padding-bottom: 0 !important; /* Quitamos el ratio responsive de móvil */
-        border-radius: 10px; /* Estético */
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        height: 350px !important;
+        /* Altura fija para desktop */
+        padding-bottom: 0 !important;
+        /* Quitamos el ratio responsive de móvil */
+        border-radius: 10px;
+        /* Estético */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-flotante-whatsapp {
+
+        zoom: 2;
+    }
+    .desktop-only-view{
+        zoom: 1.2;
+    }
+
+    /* Contenedor principal de las cards */
+    .profesionales-body {
+        position: relative !important;
+        top: auto !important;
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        background: transparent;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        order: 2;
+        z-index: 2;
+    }
+
+    /* Forzar 2 columnas exactas en desktop */
+    /* El selector > div asume que tu JS inyecta <div>. Si inyecta <article>, cámbialo. */
+    .profesionales-body > div { 
+        width: calc(50% - 10px); /* 50% del ancho menos la mitad del gap */
+        min-width: 280px; /* Evita que se aplasten si la pantalla se achica */
+        box-sizing: border-box;
+    }
+
+
+
+}
+
+/* Ocultar sección profesionales en pantallas de 1025px o menos */
+@media (max-width: 1025px) {
+    #Equipo_Profesionales_Section {
+        display: none !important;
     }
 }

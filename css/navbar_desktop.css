@@ -1,0 +1,154 @@
+/* 1. Ocultar el bloque de escritorio en móviles por defecto */
+.DesktopWrapper {
+    display: none;
+}
+
+/* =========================================================
+   MEDIA QUERY: SOLO PARA ESCRITORIO (Mayor a 1025px)
+   ========================================================= */
+/* =========================================================
+   MEDIA QUERY: ESCRITORIO (Mayor a 1025px)
+   ========================================================= */
+@media screen and (min-width: 1025px) {
+
+    #Slider_Section {
+        padding-top: 200px !important;
+    }
+
+
+    /* 1. Ocultar elementos MÓVILES */
+    .Menu,
+    .Menu2,
+    #menuButton {
+        display: none !important;
+    }
+
+    /* 2. Ocultar el FONDO VIEJO (el div gradiente fijo) */
+    .RectangleNavBar {
+        display: none !important;
+    }
+
+    /* 3. Configurar la BARRA PRINCIPAL para que se ajuste al logo */
+    .NavBar {
+        position: absolute;
+        height: 250px !important;
+        /* CLAVE: La altura la define el contenido */
+        min-height: 120px;
+        /* Un mínimo para seguridad */
+        width: 100%;
+        /* Aplicamos el fondo AQUÍ para que acompañe el tamaño del logo */
+        background: linear-gradient(89deg, #542853 0%, #542853 17%, #954B97 98%, #954B97 100%);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* Centra verticalmente logo y menú */
+        padding: 15px 40px;
+        /* Relleno: Arriba/Abajo 15px, Lados 40px */
+        box-sizing: border-box;
+    }
+
+    /* 4. El LOGO deja de flotar y ocupa espacio real */
+    .MarcaMicael {
+        position: relative !important;
+        /* Deja de ser absoluto */
+        top: auto !important;
+        left: 100px !important;
+        width: 500px;
+        /* Tamaño del logo en escritorio */
+        height: auto;
+        display: block;
+        margin: 0;
+        /* Sin márgenes extraños */
+        flex-shrink: 0;
+        /* Evita que el logo se aplaste */
+    }
+
+    .MicaelMarca1 {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        /* Se adapta al contenedor .MarcaMicael */
+        height: auto;
+        display: block;
+        /* Elimina espacio fantasma debajo de imagenes */
+    }
+
+    /* 5. Estilos del MENÚ DERECHO (Componentes nuevos) */
+    .DesktopWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 15px;
+        /* No usamos position absolute para que se centre con flexbox respecto al logo */
+        margin-left: auto;
+        padding-top: 50px;
+        padding-right: 100px;
+    }
+
+    /* Redes Sociales */
+    .DesktopSocials {
+        gap: 20px;
+        z-index: 12;
+        padding-right: 75px !important;
+        zoom: 1.6;
+        opacity: .5;
+        margin-top: -10px;
+    }
+
+    .DesktopSocials img {
+        width: 18px;
+        height: auto;
+        filter: brightness(0) invert(1);
+        /* Iconos blancos */
+        opacity: 0.8;
+        transition: opacity 0.3s;
+    }
+
+    .DesktopSocials img:hover {
+        opacity: 1;
+    }
+
+    /* Menú rectangular tipo lista */
+    .DesktopMenu {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        z-index: 12;
+    }
+
+    .DesktopMenu a {
+        display: block;
+        text-align: left;
+        padding: 6px 15px;
+        background-color: rgba(60, 20, 60, 0.4);
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 200px;
+        height: 20px;
+        transition: all 0.3s ease;
+        border-left: 2px solid transparent;
+    }
+
+    .DesktopMenu a:hover {
+        background-color: rgba(60, 20, 60, 0.7);
+        padding-left: 20px;
+        border-left: 2px solid #D5A6E6;
+    }
+
+    /* 6. Ajuste al hacer SCROLL (opcional) */
+    .NavBar.scrolled {
+        /* Si quieres que se achique al bajar, ajusta el padding o el ancho del logo */
+        padding: 5px 40px;
+    }
+
+    .NavBar.scrolled .MarcaMicael {
+        width: 200px;
+        /* Logo se achica */
+    }
+}

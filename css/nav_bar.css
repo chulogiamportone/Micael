@@ -7,7 +7,7 @@
 
     top: 0px;
     position: fixed; /* FIJO para que baje con la pantalla */
-    z-index: 10002; /* Siempre encima del menú y contenido */
+    z-index: 12; /* Siempre encima del menú y contenido */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease; /* Animación suave */
 }
@@ -49,7 +49,7 @@
     position: absolute;
     width: 50px;
     cursor: pointer;
-    z-index: 9999;
+    z-index: 10;
     transition: all 0.3s ease;
 }
 

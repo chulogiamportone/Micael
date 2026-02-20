@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const URL_TRATAMIENTOS = '/data/tratamientos.json';
     
     // Contenedores
-    const sectionNotas = document.querySelector(".notas-body");
+    const sectionNotas = document.querySelector(".notas-body_blog");
     const idSeccionDestacados = "seccion-destacados"; // ID del <section> vacío
 
     // 1. VERIFICAR SI HAY ID EN LA URL

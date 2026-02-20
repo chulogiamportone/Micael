@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="/css/slider.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/index_desktop.css">
+    <link rel="stylesheet" href="/css/profesional.css">
+    <link rel="stylesheet" href="/css/profesional_desktop.css">
+    
 </head>
 
 
@@ -86,8 +89,8 @@
                     con
                     el respaldo de un equipo profesional especializado, en un entorno de confianza y respeto.
                 </div>
-                <a href="https://wa.me/+5492613330193" class="Rectangle11" style="z-index: 10;"><a
-                        href="https://wa.me/+5492613330193" class="AgendeSuPrimeraConsulta" style="z-index: 11;">Agende
+                <a href="https://wa.me/+5492613330193" class="Rectangle11" style="z-index: 7;"><a
+                        href="https://wa.me/+5492613330193" class="AgendeSuPrimeraConsulta" style="z-index: 8;">Agende
                         su primera
                         consulta</a></a>
 
@@ -96,18 +99,61 @@
         </section>
 
         <section name="Tratamientos_Index" id="tratamientos">
+            <div class="Imagen">
+                <img class="EstetoscopioPixabay1" src="/images/Home/Tratamientos/tratamientosportada.png">
+            </div>
             <div class="Tratamientos">
+
                 <div class="Tratamientos_title">TRATAMIENTOS</div>
                 <div class="Tratamientos_text">
                     Tras la primera entrevista y evaluación del especialista en medicina integrativa determinaremos el
                     tratamiento más adecuado para su caso.
                 </div>
-                <div class="Imagen">
-                    <img class="EstetoscopioPixabay1" src="/images/Home/Tratamientos/tratamientosportada.png">
-                </div>
+
             </div>
             <div id="cards-container"></div>
         </section>
+        <div data-layer="Título" class="TTulo"
+            style=" left: 30px; padding-top: 50px ;position: absolute; flex-direction: column; justify-content: flex-start; align-items: center; gap: 19px; display: inline-flex">
+            <div data-layer="EQUIPO DE PROFESIONALES" class="EquipoDeProfesionales"
+                style="align-self: stretch; height: 36.85px; text-align: center; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 20px; font-family: Montserrat; font-weight: 600; word-wrap: break-word">
+                EQUIPO DE PROFESIONALES</div>
+
+        </div>
+        <section class="notas-body">
+
+            <!-- Aquí se renderiza dinámicamente la lista o el detalle -->
+        </section>
+
+
+        <section class="navegacion_botones">
+
+
+        </section>
+
+        <section class="card-profesional">
+            <header class="card-header">
+                <h2 style="font-size: 15px;">
+                    <strong>Cada proceso es único.<br>
+                        Nuestra función, acompañar con amor.</strong>
+                </h2>
+
+                <h2 style="margin-top: 20px;  font-size: 12px;
+                    max-width: 300px;
+                    justify-self: center;
+                    color: white;
+                    font-weight: 300;
+                    font-family: 'Montserrat';">
+                    Escuchamos, cuidamos y guiamos amorosamente en el camino de las transformaciones profundas e
+                    integrales.
+                </h2>
+            </header>
+
+        </section>
+
+
+
+
 
         <div class="mobile-only-view">
             <section name="Contacto_Index" id="Contacto_Index">
@@ -257,9 +303,9 @@
             <div class="blog-latest" aria-labelledby="blog-latest-title">
                 <div class="container">
                     <h2 id="blog-latest-title" class="blog-latest__heading">LO ÚLTIMO EN NUESTRO BLOG</h2>
-
+                    <h3 id="blog-latest-title" class="blog-latest__heading" style="color: #824C91;">TEMAS MICAEL</h3>
                     <!-- contenedor donde el JS inyectará las cards -->
-                    <div class="blog-latest__list notas-body" aria-live="polite"></div>
+                    <section class="blog-latest__list notas-body_blog" aria-live="polite"></section>
 
                     <!-- botón para ver todas las notas (opcional) -->
                     <div class="blog-latest__actions">
@@ -279,7 +325,7 @@
     <script src="/js/contacto.js"></script>
     <script src="/js/burguer.js"></script>
     <script src="/js/slider.js"></script>
-
+    <script src="/js/profesional.js"></script>
     <script src="/js/ajuste_escala.js"></script>
     <script>
         window.initCards({ jsonUrl: '/data/tratamientos.json', containerId: 'cards-container' });
